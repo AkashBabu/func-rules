@@ -8,29 +8,32 @@
 
 
 
-var rules = {};
-var count = 0;
+// var rules = {};
+// var ruleNum = 0;
 
 var Rules = function(){
+	this._rules = {};
+	this._ruleNum = 0;
 	return this;
 };
 
 Rules.prototype.append = function(callback){
-	rules[count] = callback;
-
-	var ruleNum = count++;
-	return ruleNum.toString();
+	this._rules[this._ruleNum] = callback;
+	var temp = this._ruleNum++;
+	return temp.toString();
 }
 
 Rules.prototype.exec = function(rulesToExec, data){
-	if(rulesToExec.constructor == Array){
-		rulesToExec.forEach(function(rule){
-			rules[rule.rule](rule.config, data);
-		})
-	}else{
-		throw new Error('Rules.exec() accepts only Array');
-	}
+	var self = this;
+	rulesToExec.forEach(function(rule){
+		self._rules[rule.ruleNum](rule.config, data);
+	})
+	self = null;
 };
+
+Rules.prototype.remove = function(ruleNum){
+	delete this._rules[ruleNum];
+}
 
 module.exports = Rules;
 

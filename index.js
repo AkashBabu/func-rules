@@ -8,8 +8,6 @@
 
 
 
-// var rules = {};
-// var ruleNum = 0;
 
 var Rules = function(){
 	this._rules = {};
@@ -35,10 +33,6 @@ Rules.prototype.exec = function(rulesToExec){
 	});
 	return this;
 };
-
-// Rules.prototype.deregister = function(ruleNum){
-// 	delete this._rules[ruleNum];
-// }
 
 module.exports = Rules;
 

@@ -43,34 +43,6 @@ Rules.prototype.exec = function(rulesToExec){
 module.exports = Rules;
 
 
-if(require.main == module){
-	function func1(one ,two){
-		console.log('Func1');
-		console.log('Specificargs :' + one);
-		console.log('Common args : ' + two);
-		console.log();
-	}
-	function func2(one, two){
-
-		console.log('Func2');
-		console.log('Specificargs :' + one);
-		console.log('Common args : ' + two);
-		console.log();
-	}
-
-	var rules = new Rules();
-	var func1Rule = rules.register(func1);
-	var func2Rule = rules.register(func2);
-
-	rules.exec([
-		{rule : func1Rule},
-		{rule : func2Rule, args : ['specificForFunc2']},	
-		{rule : func2Rule, args : ['specificForFunc22']},	
-	]
-	,'common'
-	).exec([{rule : func1Rule}], 'another');
-}
-
 
 
 

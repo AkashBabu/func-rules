@@ -1,29 +1,39 @@
+
+
+
+
+
+
+
+
+
+
 {
-  "name": "ifttt-events",
-  "version": "1.0.0",
-  "description": "A javascript library which can be used to register functions of type ifttt, and then apply only the required functions on the data obtained. ",
+  "name": "func-rules",
+  "version": "2.0.0",
+  "description": "Nodejs library for registering functions, and then executing only selected functions with the specified arguments. You can configure function specific arguments and also common arguments for all the functions to be executed.  ",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "echo \"test not specified\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AkashBabu/ifttt-events.git"
+    "url": "git+https://github.com/AkashBabu/func-rules.git"
   },
   "keywords": [
     "ifttt",
     "events",
-    "trigger",
-    "events",
     "triggers",
     "alerts",
     "trigger",
-    "actions"
+    "actions",
+    "rules",
+    "func"
   ],
   "author": "Akash Babu <001akashbabu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AkashBabu/ifttt-events/issues"
+    "url": "https://github.com/AkashBabu/func-rules/issues"
   },
-  "homepage": "https://github.com/AkashBabu/ifttt-events#readme"
+  "homepage": "https://github.com/AkashBabu/func-rules#readme"
 }

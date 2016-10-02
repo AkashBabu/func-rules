@@ -33,6 +33,7 @@ Rules.prototype.exec = function(rulesToExec){
 		var specificArgs = entry.args || [];
 		self._rules[entry.rule].apply(this, Array.prototype.concat.call(specificArgs, commonArgs));
 	});
+	return this;
 };
 
 // Rules.prototype.deregister = function(ruleNum){
@@ -63,11 +64,11 @@ if(require.main == module){
 
 	rules.exec([
 		{rule : func1Rule},
-		{rule : func2Rule, args : ['specificForFunc2']},
-		
-		
-	],'common'
-	);
+		{rule : func2Rule, args : ['specificForFunc2']},	
+		{rule : func2Rule, args : ['specificForFunc22']},	
+	]
+	,'common'
+	).exec([{rule : func1Rule}], 'another');
 }
 
 
